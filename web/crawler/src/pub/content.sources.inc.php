@@ -874,7 +874,7 @@ function json2XmlRule() {
 	var ruleXml = '<rules>';
 	for ( var i = 0; i < objJson.rules.length ; i++ ) {
 		if (objJson.rules[i].pat != "") {
-			ruleXml += '<rule><ope>' + objJson.rules[i].ope + '</ope><mode>' + objJson.rules[i].mode + '</mode><pat>' + escapeHTML(objJson.rules[i].pat) + '</pat><meta>' + escapeHTML(objJson.rules[i].meta) + '</meta><metap>' + escapeHTML(objJson.rules[i].metap) + '</metap><ignoreparam>' + escapeHTML(objJson.rules[i].ignoreparam) + '</ignoreparam></rule>';
+			ruleXml += '<rule><ope>' + objJson.rules[i].ope + '</ope><mode>' + objJson.rules[i].mode + '</mode><pat>' + escapeHTML(objJson.rules[i].pat.replace(/\\\\/g,"\\")) + '</pat><meta>' + escapeHTML(objJson.rules[i].meta) + '</meta><metap>' + escapeHTML(objJson.rules[i].metap) + '</metap><ignoreparam>' + escapeHTML(objJson.rules[i].ignoreparam) + '</ignoreparam></rule>';
 		}
 	}
 	ruleXml += '</rules>';		
